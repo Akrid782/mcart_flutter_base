@@ -15,10 +15,10 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: const <Widget>[
-            ButtonNavigation('4 квадрата', 'square'),
-            ButtonNavigation('Цветной список', 'list_color'),
+            ButtonNavigation('4 квадрата', '/square'),
+            ButtonNavigation('Цветной список', '/list_color'),
             ButtonNavigation('CodeLab', '/laba'),
-            ButtonNavigation('Асинхронный запрос', 'sync'),
+            ButtonNavigation('Асинхронный запрос', '/sync'),
           ],
         ),
       ),

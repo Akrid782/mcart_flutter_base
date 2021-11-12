@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:base/page/code_lab.dart';
 import 'package:base/page/home.dart';
+import 'package:base/page/square.dart';
 
 void main() => runApp(const MyApp());
 
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const HomePage(),
-        '/laba': (context) => const Laba()
+        '/laba': (context) => const Laba(),
+        '/square': (context) => const Square()
       },
     );
   }
