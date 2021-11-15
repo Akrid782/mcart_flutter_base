@@ -12,7 +12,7 @@ class _ListPageState extends State<ListPage> {
   final Random rnd = Random();
   final _items = <Color>[];
 
-  List<Color> generationList() {
+  List<Color> generateList() {
     int rengeColor = 255;
 
     return List<Color>.generate(
@@ -37,7 +37,7 @@ class _ListPageState extends State<ListPage> {
         onPressed: () {
           setState(() {
             _items.clear();
-            _items.addAll(generationList());
+            _items.addAll(generateList());
           });
         },
         child: const Icon(
@@ -54,7 +54,7 @@ class _ListPageState extends State<ListPage> {
   }
 
   Widget _buildListView() {
-    _items.addAll(generationList());
+    _items.addAll(generateList());
     return ListView.builder(
         padding: const EdgeInsets.only(top: 15),
         itemCount: _items.length,
