@@ -40,7 +40,7 @@ class _SquareState extends State<Square> {
         title: const Text('4 квадрата'),
       ),
       body: Container(
-        padding: const EdgeInsets.only(top: 50),
+        padding: const EdgeInsets.only(top: 82),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
