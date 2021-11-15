@@ -4,7 +4,9 @@ class ButtonNavigation extends StatelessWidget {
   final String title;
   final String nameRoute;
 
-  final double sizeButton = 50;
+  static const double sizeButton = 48;
+  static const double paddingButton = 16.0;
+  static const double fontSizeButton = 16.0;
 
   const ButtonNavigation(this.title, this.nameRoute, {Key? key})
       : super(key: key);
@@ -12,7 +14,7 @@ class ButtonNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(bottom: 20.0),
+      padding: const EdgeInsets.only(bottom: paddingButton),
       child: SizedBox(
         height: sizeButton,
         child: ElevatedButton(
@@ -22,7 +24,7 @@ class ButtonNavigation extends StatelessWidget {
               Text(
                 title,
                 style: const TextStyle(
-                  fontSize: 15,
+                  fontSize: fontSizeButton,
                   color: Colors.black,
                 ),
               ),
