@@ -11,15 +11,33 @@ class Square extends StatefulWidget {
 
 class _SquareState extends State<Square> {
   final Random rnd = Random();
-  static const double width = 150;
-  static const double height = 150;
-  static const double marge = 10;
+
+  Widget _buildBlock() {
+    const double width = 150;
+    const double height = 150;
+    const double marge = 5;
+    int rengeColor = 255;
+
+    return SizedBox(
+      child: Container(
+        margin: const EdgeInsets.all(marge),
+        color: Color.fromARGB(
+          rnd.nextInt(rengeColor),
+          rnd.nextInt(rengeColor),
+          rnd.nextInt(rengeColor),
+          rnd.nextInt(rengeColor),
+        ),
+      ),
+      width: width,
+      height: height,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('fgh'),
+        title: const Text('4 квадрата'),
       ),
       body: Container(
         padding: const EdgeInsets.only(top: 50),
@@ -27,43 +45,26 @@ class _SquareState extends State<Square> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Column(
-              children: [
-                Container(
-                  margin: const EdgeInsets.all(marge),
-                  color: Color.fromARGB(
-                    rnd.nextInt(255),
-                    rnd.nextInt(255),
-                    rnd.nextInt(255),
-                    rnd.nextInt(255),
-                  ),
-                  width: width,
-                  height: height,
-                ),
-                Container(
-                  margin: const EdgeInsets.all(marge),
-                  color: Colors.amber,
-                  width: width,
-                  height: height,
-                )
-              ],
+              children: [_buildBlock(), _buildBlock()],
             ),
             Column(
-              children: [
-                Container(
-                  margin: const EdgeInsets.all(marge),
-                  color: Colors.red,
-                  width: width,
-                  height: height,
-                ),
-                Container(
-                  margin: const EdgeInsets.all(marge),
-                  color: Colors.amber,
-                  width: width,
-                  height: height,
-                )
-              ],
+              children: [_buildBlock(), _buildBlock()],
             )
           ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          setState(() {});
+        },
+        child: const Icon(
+          Icons.create_outlined,
+          color: Colors.black,
+        ),
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(
+            Radius.circular(16.0),
+          ),
         ),
       ),
     );
