@@ -18,7 +18,7 @@ class HomePage extends StatelessWidget {
             ButtonNavigation('4 квадрата', '/square'),
             ButtonNavigation('Цветной список', '/list_color'),
             ButtonNavigation('CodeLab', '/laba'),
-            ButtonNavigation('Асинхронный запрос', '/sync'),
+            ButtonNavigation('Асинхронный запрос', '/async'),
           ],
         ),
       ),
